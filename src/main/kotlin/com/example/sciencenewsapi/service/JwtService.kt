@@ -3,14 +3,17 @@ package com.example.sciencenewsapi.service
 
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.security.Keys
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import java.util.Date
 import javax.crypto.SecretKey
 
 @Service
-class JwtService {
+class JwtService(
+    @Value("\${jwt.secret}")
+    secret: String
+) {
 
-    private val secret = "my-super-secret-key-my-super-secret-key"
     private val key: SecretKey = Keys.hmacShaKeyFor(secret.toByteArray())
 
     fun generateToken(email: String, role: String): String {
