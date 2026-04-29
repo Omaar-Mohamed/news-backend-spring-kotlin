@@ -1,6 +1,8 @@
 spring:
   application:
     name: science-news-api
+  config:
+    import: optional:classpath:application-local.yaml
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5432/science_news_db}
     username: ${DB_USERNAME:postgres}
@@ -8,6 +10,7 @@ spring:
     driver-class-name: org.postgresql.Driver
 
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
     show-sql: true
