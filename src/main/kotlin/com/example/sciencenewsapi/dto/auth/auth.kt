@@ -1,4 +1,4 @@
-package com.example.sciencenewsapi.dto.guardian.auth
+package com.example.sciencenewsapi.dto.auth
 
 import jakarta.validation.constraints.NotBlank
 

@@ -3,9 +3,9 @@ package com.example.sciencenewsapi.service
 import com.example.sciencenewsapi.Entity.AppUser
 import com.example.sciencenewsapi.Entity.Role
 
-import com.example.sciencenewsapi.dto.guardian.auth.AuthResponse
-import com.example.sciencenewsapi.dto.guardian.auth.LoginRequest
-import com.example.sciencenewsapi.dto.guardian.auth.RegisterRequest
+import com.example.sciencenewsapi.dto.auth.AuthResponse
+import com.example.sciencenewsapi.dto.auth.LoginRequest
+import com.example.sciencenewsapi.dto.auth.RegisterRequest
 
 import com.example.sciencenewsapi.repository.AppUserRepository
 import org.springframework.security.crypto.password.PasswordEncoder

@@ -2,9 +2,9 @@ package com.example.sciencenewsapi.controller
 
 
 
-import com.example.sciencenewsapi.dto.guardian.auth.AuthResponse
-import com.example.sciencenewsapi.dto.guardian.auth.LoginRequest
-import com.example.sciencenewsapi.dto.guardian.auth.RegisterRequest
+import com.example.sciencenewsapi.dto.auth.AuthResponse
+import com.example.sciencenewsapi.dto.auth.LoginRequest
+import com.example.sciencenewsapi.dto.auth.RegisterRequest
 import com.example.sciencenewsapi.service.AuthService
 import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.*

@@ -11,7 +11,9 @@ import java.time.OffsetDateTime
 @Service
 class NewsSyncService(
     private val client: GuardianApiClient,
-    private val repo: NewsArticleRepository
+    private val repo: NewsArticleRepository,
+    private val notificationService: NotificationService
+
 ) {
 
     fun sync(): SyncNewsResponse {
@@ -34,6 +36,16 @@ class NewsSyncService(
             }
 
         repo.saveAll(newArticles)
+        val notifiedUsers = notificationService.sendToUsers(
+            title = "Science news sync 🔬",
+            body = if (newArticles.isEmpty()) {
+                "No new articles. Everything is already updated."
+            } else {
+                "${newArticles.size} new articles added"
+            }
+        )
+
+        println("Notified users count = $notifiedUsers")
 
         return if (newArticles.isEmpty()) {
             SyncNewsResponse(
